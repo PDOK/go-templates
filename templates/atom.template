@@ -1,0 +1,41 @@
+{{- $root := .}}
+apiVersion: pdok.nl/v1
+kind: Atom
+metadata:
+  name: atom-v1-0
+  labels:
+    dataset: {{ .atom.service_id }}
+spec:
+  service_id: {{ .atom.service_id}}
+  owner: {{ .atom.service_owner }}
+  version: {{ .atom.service_version }}
+  update_version: {{ .atom_delivery.update_version }}
+  source_bucket: "atom"
+  source_key: "{{ .atom_delivery.source_key }}
+  service:
+    name: pdok-inspire
+    title: PDOK INSPIRE Download Service 3.0, ATOM - Service Feed
+    subtitle: INSPIRE Download Service van PDOK met INSPIRE-plichtige datasets
+    metadata_identifier: {{ .atom.service_metadata_uuid }}
+    rights: {{ .atom.service_rights }}
+    datasets:
+    {{- range $index, $feed := .atom_feeds }}
+      - name: {{ .feed_name }}
+        title: {{ .feed_title }}
+        subtitle: {{ .feed_subtitle }}
+        rights: {{ $root.atom.service_rights }}
+        summary: {{ .feed_summary }}
+        metadata_identifier: {{ .dataset_metadata_identifier }}
+        bbox:
+          minx: {{ .bbox.minx }}
+          maxx: {{ .bbox.maxx }}
+          miny: {{ .bbox.miny }}
+          maxy: {{ .bbox.maxy }}
+        source_id: {{ .dataset_metadata_identifier }}
+        source_id_ns: {{ .dataset_authority }}
+        downloads:
+        {{- range $index, $entry := .entries }}
+          - file: {{ .download_file }}
+            espg: {{ .download_projection }}
+        {{- end }}
+    {{- end }}

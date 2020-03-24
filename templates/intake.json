@@ -1,0 +1,46 @@
+{
+  "atom":
+  {
+    "service_owner": "rws",
+    "service_id": "kaderrichtlijnmarienestrategie2018",
+    "service_name": "Kaderrichtlijn Marinestrategie 2018",
+    "service_title": "Kaderrichtlijn Marinestrategie 2018",
+    "service_abstract": "omschrijving",
+    "service_version": "v1_0",
+    "service_metadata_uuid": "9ff1a13c-d1e0-4150-8523-91cb489ae1a4",
+    "service_url": "https://geodata.nationaalgeoregister.nl/rws/kaderrichtlijnmarienestrategie2018/atom/v1_0/index.xml",
+    "service_rights" : "http://creativecommons.org/publicdomain/zero/1.0/deed.nl"
+  },
+  "atom_feeds" : [
+    {
+      "feed_id": "krm_marienewateren_eu2018",
+      "feed_name": "INSPIRE Download Service van KRM Mariene wateren Nederland EU2018",
+      "feed_title": "INSPIRE Download Service van KRM mariene wateren Nederland EU2018 (Kaderrichtlijn Mariene Strategie)",
+      "feed_subtitle": "KRM mariene wateren Nederland EU2018 (Kaderrichtlijn Mariene Strategie)",
+      "feed_rights": "http://creativecommons.org/publicdomain/zero/1.0/deed.nl",
+      "feed_summary": "KRM mariene wateren Nederland EU2018 (Kaderrichtlijn Mariene Strategie)",
+      "dataset_metadata_identifier": "uuid=krm-a905-9d8e-4758-83fa-28b057f185e3",
+      "dataset_authority": "http://kadaster",
+      "bbox": {
+        "minx": 3.3,
+        "maxx": 7.24,
+        "miny": 50.73,
+        "maxy": 53.6
+      },
+      "entries": [
+        {
+          "download_file": "data/krm_marienewateren_eu2018_gpkg.zip",
+          "download_title": "INSPIRE Download Service van KRM mariene wateren Nederland EU2018 (Kaderrichtlijn Mariene Strategie)",
+          "download_content": "",
+          "download_projection": "EPSG:4258"
+        },
+        {
+          "download_file": "data/krm_marienewateren_eu2018_gpkg.zip",
+          "download_title": "INSPIRE Download Service van KRM mariene wateren Nederland EU2018 (Kaderrichtlijn Mariene Strategie)",
+          "download_content": "",
+          "download_projection": "EPSG:4258"
+        }
+      ]
+    }
+  ]
+}
