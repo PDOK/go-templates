@@ -1,6 +1,6 @@
 # Go templates
 
-Program for generating files using templates with json as input. Additional KVP's can be passed to the main program
+Program for generating files using templates with json as input. Additional KVP's can be passed, they will aslo be applied on the template.
 
 Initialy developed for generating K8s Custom Resources
 
