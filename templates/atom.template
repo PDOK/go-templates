@@ -9,9 +9,9 @@ spec:
   service_id: {{ .atom.service_id}}
   owner: {{ .atom.service_owner }}
   version: {{ .atom.service_version }}
-  update_version: {{ .atom_delivery.update_version }}
+  update_version: {{ .delivery.update_version }}
   source_bucket: "atom"
-  source_key: "{{ .atom_delivery.source_key }}
+  source_key: "{{ .delivery.source_key }}
   service:
     name: pdok-inspire
     title: PDOK INSPIRE Download Service 3.0, ATOM - Service Feed
