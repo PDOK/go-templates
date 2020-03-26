@@ -12,6 +12,6 @@ The main program take the following arguments:
 
 you can run the docker container from the source after a docker build
 ```cmd
-docker run -it -v $(pwd)/templates:/templates -v $(pwd)/output:/output go-templates:0.0.1 go-templates /templates/intake.json /templates/atom.template /output/atom.yaml update_version=1 source_key=dir/dir
+docker run -it -v $(pwd)/templates:/templates -v $(pwd)/output:/output go-templates:0.0.1 go-templates /templates/intake.json /templates/atom.template /output/atom.yaml delivery.update_version=1 delivery.source_key=dir/dir
 ```
 
