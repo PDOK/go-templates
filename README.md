@@ -8,7 +8,7 @@ The main program take the following arguments:
 - json inputfile: location to a json file used for populating the template
 - templatefile: the actual go template
 - outputfile
-- key value pair .... : zero or more kvp in the format 'key(key)+=value' these values wil also be used for populating the template
+- key value pair .... : zero or more kvp in the format 'key(.key)+=value' these values wil also be used for populating the template
 
 you can run the docker container from the source after a docker build
 ```cmd
