@@ -15,6 +15,10 @@ var outputFilename string
 var kvpArgs []string
 
 func main() {
+	if len(os.Args) < 5 {
+		log.Fatalf("at least 3 arguments expected: jsonInputFile, templateFile, outputFilename")
+	}
+
 	jsonInputFilename = os.Args[1]
 	templateFilename = os.Args[2]
 	outputFilename = os.Args[3]
@@ -35,7 +39,7 @@ func main() {
 	}
 
 	err = templ.Execute(outputFile, inputJson)
-	if err!=nil {
+	if err != nil {
 		log.Fatalf("templating: %v", err)
 	}
 }
@@ -51,27 +55,27 @@ func readJson(inputJson *map[string]interface{}) {
 	}
 }
 
-func addKvpArgumentsToMap (args []string, jmap map[string]interface{}) {
+func addKvpArgumentsToMap(args []string, jmap map[string]interface{}) {
 	for _, arg := range args {
 		kvp := strings.Split(arg, "=")
-		if len(kvp)!=2{
+		if len(kvp) != 2 {
 			log.Fatalf("kvp argument %s may contain only one '=' sign and should contain a key and a value", arg)
 		}
 		keyPath := strings.Split(kvp[0], ".")
-		addValueToMap (keyPath, kvp[1], jmap)
+		addValueToMap(keyPath, kvp[1], jmap)
 	}
 }
 
-func addValueToMap (keyPath []string, value string, kvMap map[string]interface{})  {
+func addValueToMap(keyPath []string, value string, kvMap map[string]interface{}) {
 	pointer := kvMap
-	for index, key := range keyPath{
-		isLastKeyInPath := len(keyPath)-1==index
+	for index, key := range keyPath {
+		isLastKeyInPath := len(keyPath)-1 == index
 		if isLastKeyInPath {
 			// set the value
-			pointer[key]=value
+			pointer[key] = value
 		} else {
 			// traverse down the tree
-			if pointer[key]==nil {
+			if pointer[key] == nil {
 				pointer[key] = make(map[string]interface{})
 			}
 			pointer = pointer[key].(map[string]interface{})
