@@ -11,7 +11,9 @@ The main program takes the following arguments:
 - any key value pairs: zero or more kvp's in the format 'key(.key(.key)...)=value' these values wil also be used for populating the template
 
 ## example
-you can run the docker container from the source after a docker build
+
+using the input and template from the exmaple folder .... 
+
 ```cmd
 docker run -it -v $(pwd)/example:/templates -v $(pwd)/output:/output pdokdev/go-templates:0.0.1 go-templates /templates/krm2018_intake.json /templates/atom.template /output/atom.yaml delivery.update_version=25-09-2019T09:00 delivery.source_key=rws/kaderrichtlijnmarienestrategie2018/25-09-2019T09:00
 ```
